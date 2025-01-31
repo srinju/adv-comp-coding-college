@@ -47,8 +47,8 @@ public class minStack {
         
         System.out.println("enter the  no of operatiins :");
         int n = sc.nextInt();
-
-        while (true) {
+        int i = 0;
+        while (i <= n) {
             
             System.out.println("methods : ");
             System.out.println("1.push");
@@ -68,23 +68,27 @@ public class minStack {
                     int element = sc.nextInt();
 
                     minStack.push(element);
+                    i++;
                     break;
                 
                 case 2 : 
                     
                     minStack.pop();
+                    i++;
                     break;
 
                 case 3 : 
 
                     int top = minStack.top();
                     System.out.println("top exec : " + top);
+                    i++;
                     break;
 
                 case 4 : 
 
                     int getMin = minStack.getMin();
                     System.out.println("get min exec " + getMin);
+                    i++;
                     break;
 
                 default : 
