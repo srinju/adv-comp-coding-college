@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class mergeSortLL {
     
     //merge sort in a linked list
@@ -56,7 +58,7 @@ public class mergeSortLL {
         Node slow = head;
         Node fast  = head.next;
 
-        while(fast != null && fast.next == null){
+        while(fast != null && fast.next != null){
             
             slow = slow.next;
             fast = fast.next.next;
@@ -121,15 +123,21 @@ public class mergeSortLL {
         
         mergeSortLL ll = new mergeSortLL();
 
-        ll.addLast(5);
-        ll.addLast(3);
-        ll.addLast(2);
-        ll.addLast(7);
-        ll.addLast(0);
-        ll.addLast(1);
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("enter the number of nodes : ");
+        int n = sc.nextInt();
 
-        ll.printList();
-        ll.head = ll.mergeSort(ll.head);
+        System.out.println("enter the elements of the nodes");
+        for(int i = 0 ; i < n ; i++){
+            int data  = sc.nextInt();
+            ll.addLast(data);
+        }
+
+        ll.head = mergeSort(ll.head);
+
+        System.out.println("merged list is : ");
+
         ll.printList();
 
     }

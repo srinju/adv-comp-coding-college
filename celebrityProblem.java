@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class celebrityProblem {
     
     /*
@@ -60,11 +62,21 @@ public class celebrityProblem {
 
     public static void main(String[] args) {
         
-        int[][] arr = {
-            {0, 1, 0},
-            {0, 0, 0},
-            {0, 1, 0}
-        };
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter the no of elements of the array : ");
+        int n = sc.nextInt();
+
+        int[][] arr = new int[n][n];
+
+        System.out.println("enter the elements of the array : ");
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < n ; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        
+        sc.close();
 
         int celeb = celeb(arr);
         if (celeb == -1) {

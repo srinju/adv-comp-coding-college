@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class assembleEvenAndOdd {
     
     public static class Node{
@@ -85,18 +87,27 @@ public class assembleEvenAndOdd {
 
     public static void main(String[] args) {
         
+        Scanner sc = new Scanner(System.in);
         assembleEvenAndOdd ll = new assembleEvenAndOdd();
 
-        ll.addLast(2);
-        ll.addLast(1);
-        ll.addLast(4);
-        ll.addLast(3);
+        System.out.println("enter the no of elements in the ll : ");
+        int n = sc.nextInt();
 
+        System.out.println("enter the elemetns in the linked list : ");
+        for(int i = 0 ; i < n ; i++){
+            int data = sc.nextInt();
+            ll.addLast(data);
+        }
+        
+        System.out.println("original list : ");
         ll.printList();
 
-        ll.head = ll.reArrange(ll.head);
+        ll.head = reArrange(ll.head);
+
+        System.out.println("re arranged ll is (even nodes followed by odd nodes) : ");
         ll.printList();
 
+        sc.close();
 
     }
 }

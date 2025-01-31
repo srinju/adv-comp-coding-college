@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class segregateEvenAndOdd {
     
     public static class Node{
@@ -83,19 +85,25 @@ public class segregateEvenAndOdd {
     }
 
     public static void main(String[] args) {
-        
+       
+        Scanner sc = new Scanner(System.in);
         segregateEvenAndOdd ll = new segregateEvenAndOdd();
 
-        ll.addLast(1);
-        ll.addLast(2);
-        ll.addLast(3);
-        ll.addLast(4);
-        ll.addLast(5);
+        System.out.println("enter the number of elements in the linked list : ");
+        int n = sc.nextInt();
 
+        System.out.println("emter the elements of the linked list : ");
+        for(int i = 0 ; i < n ; i++){
+            int data = sc.nextInt();
+            ll.addLast(data);
+        }
+
+        System.out.println("original list : ");
         ll.printList();
 
-        ll.head = ll.segregate(ll.head);
+        ll.head = segregate(head);
 
+        System.out.println("after segregations is : ");
         ll.printList();
     }
 }

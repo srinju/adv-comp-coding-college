@@ -43,11 +43,17 @@ public class minStack {
 
     public static void main(String[] args) {
         minStack minStack = new minStack();
+        Scanner sc = new Scanner(System.in);
 
-        minStack.push(5);
-        minStack.push(3);
-        minStack.push(7);
-        minStack.push(2);
+        System.out.println("enter the number of elements to be pushed in the stack");
+        int n = sc.nextInt();
+
+        System.out.println("enter the data of the elements that are being pushed in the stack : ");
+        for(int i = 0 ; i < n ; i++){
+            int data = sc.nextInt();
+            minStack.push(data);
+        }
+        
 
         System.out.println("Top element: " + minStack.top()); // Output: 2
         System.out.println("Minimum element: " + minStack.getMin()); // Output: 2
