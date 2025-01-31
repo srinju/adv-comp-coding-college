@@ -44,28 +44,52 @@ public class minStack {
     public static void main(String[] args) {
         minStack minStack = new minStack();
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("enter the number of elements to be pushed in the stack");
+        
+        System.out.println("enter the  no of operatiins :");
         int n = sc.nextInt();
 
-        System.out.println("enter the data of the elements that are being pushed in the stack : ");
-        for(int i = 0 ; i < n ; i++){
-            int data = sc.nextInt();
-            minStack.push(data);
+        while (true) {
+            
+            System.out.println("methods : ");
+            System.out.println("1.push");
+            System.out.println("2.pop");
+            System.out.println("3.top");
+            System.out.println("4. get min");
+
+            System.out.println("enter ur choice");
+
+            int choice = sc.nextInt();
+
+            switch(choice) {
+                
+                case 1 : 
+                    
+                    System.out.println("enter the elements");
+                    int element = sc.nextInt();
+
+                    minStack.push(element);
+                    break;
+                
+                case 2 : 
+                    
+                    minStack.pop();
+                    break;
+
+                case 3 : 
+
+                    int top = minStack.top();
+                    System.out.println("top exec : " + top);
+                    break;
+
+                case 4 : 
+
+                    int getMin = minStack.getMin();
+                    System.out.println("get min exec " + getMin);
+                    break;
+
+                default : 
+                    throw new IllegalArgumentException("invalid input");
+            }
         }
-        
-
-        System.out.println("Top element: " + minStack.top()); // Output: 2
-        System.out.println("Minimum element: " + minStack.getMin()); // Output: 2
-
-        minStack.pop();
-        System.out.println("Top element after pop: " + minStack.top()); // Output: 7
-        System.out.println("Minimum element after pop: " + minStack.getMin()); // Output: 3
-
-        minStack.pop();
-        System.out.println("Minimum element after another pop: " + minStack.getMin()); // Output: 3
-
-        minStack.pop();
-        System.out.println("Minimum element after another pop: " + minStack.getMin()); // Output: 5
     }
 }
