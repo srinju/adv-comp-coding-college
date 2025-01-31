@@ -54,7 +54,7 @@ public class mergeSortLL {
         }
 
         Node slow = head;
-        Node fast  = head;
+        Node fast  = head.next;
 
         while(fast != null && fast.next == null){
             
@@ -131,6 +131,6 @@ public class mergeSortLL {
         ll.printList();
         ll.head = ll.mergeSort(ll.head);
         ll.printList();
-        
+
     }
 }
