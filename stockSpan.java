@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.Stack;
 
 public class stockSpan {
@@ -30,14 +31,27 @@ public class stockSpan {
     }
 
     public static void main(String[] args) {
-        int[] stocks = {100,80,60,70,60,85,100};
-        int[] span = new int[stocks.length];
+        //int[] stocks = {100,80,60,70,60,85,100};
+        
+        Scanner sc = new Scanner(System.in);
 
-        findSpan(stocks , span);
+        System.out.println("enter no of elements : ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
 
-        for(int i = 0 ; i < span.length ; i++){
-            System.out.println(span[i] + " ");
+        System.out.println("enter the stocks data : ");
+        for(int i = 0 ; i < arr.length ; i++){
+            arr[i] = sc.nextInt();
         }
+
+        int[] span = new int[arr.length];
+        int[] result = findSpan(arr, span);
+
+        System.out.println("the span array is : ");
+        for(int i = 0 ; i < result.length ; i++){
+            System.out.print(result[i] + " ");
+        }
+        System.out.println();
     }
-    
+
 }

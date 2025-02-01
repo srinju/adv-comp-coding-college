@@ -50,7 +50,7 @@ public class priorityQueueDLL {
             head = newNode;
 
         } else {
-            //jodi null  a hue tale middle e add or at the end
+            //jodi null  na hue tale middle e add or at the end
             newNode.next = prevNode.next;
             newNode.prev = prevNode;
 
