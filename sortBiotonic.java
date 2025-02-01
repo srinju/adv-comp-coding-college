@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class sortBiotonic {
 
     public static class Node {
@@ -150,16 +152,20 @@ public class sortBiotonic {
         
         sortBiotonic dll = new sortBiotonic();
         
-        dll.addLast(1);
-        dll.addLast(5);
-        dll.addLast(8);
-        dll.addLast(4);
-        dll.addLast(2);
-        dll.addLast(1);
-        
-        dll.printList();
-        
-        dll.head = dll.sortBiotonicLL(dll.head);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter the number of nodes");
+        int n = sc.nextInt();
+
+        System.out.println("enter the elements");
+        for(int i = 0 ; i < n ; i++){
+            dll.addLast(sc.nextInt());
+        }
+
+        dll.head = sortBiotonicLL(dll.head);
+
+        System.out.println("sorted is : ");
+
         dll.printList();
     
       }

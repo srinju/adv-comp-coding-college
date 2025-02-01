@@ -39,6 +39,5 @@ public class stockSpan {
             System.out.println(span[i] + " ");
         }
     }
-
     
 }

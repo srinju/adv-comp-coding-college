@@ -86,9 +86,7 @@ public class loop {
 
             // Connect the tail's next to the cycle node to form a cycle
             tail.next = cycleNode;
-        }
-
-        if (index == -1){
+        } else {
             System.out.println("no cycle");
         }
 
