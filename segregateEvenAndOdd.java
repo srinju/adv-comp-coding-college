@@ -101,7 +101,7 @@ public class segregateEvenAndOdd {
         System.out.println("original list : ");
         ll.printList();
 
-        ll.head = segregate(head);
+        ll.head = segregate(ll.head);
 
         System.out.println("after segregations is : ");
         ll.printList();
